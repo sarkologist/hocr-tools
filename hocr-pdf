@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Create a searchable PDF from a pile of HOCR + JPEG. Tested with
+# Create a searchable PDF from a pile of HOCR + TIFF. Tested with
 # Tesseract.
 
 from __future__ import print_function
@@ -50,10 +50,10 @@ class StdoutWrapper:
 
 
 def export_pdf(playground, default_dpi, savefile=False):
-    """Create a searchable PDF from a pile of HOCR + JPEG"""
-    images = sorted(glob.glob(os.path.join(playground, '*.jpg')))
+    """Create a searchable PDF from a pile of HOCR + TIFF"""
+    images = sorted(glob.glob(os.path.join(playground, '*.tiff')))
     if len(images) == 0:
-        print("WARNING: No JPG images found in the folder", playground,
+        print("WARNING: No TIFF images found in the folder", playground,
               "\nScript cannot proceed without them and will terminate now.\n")
         sys.exit(0)
     load_invisible_font()
@@ -156,11 +156,11 @@ CMGjwvxTsr74/f/F95m3TH9x8o0/TU//N+7/D/ScVcA=
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Create a searchable PDF from a pile of hOCR and JPEG")
+        description="Create a searchable PDF from a pile of hOCR and TIFF")
     parser.add_argument(
         "imgdir",
-        help=("directory with the hOCR and JPEG files (corresponding "
-              "JPEG and hOCR files have to have the same name with "
+        help=("directory with the hOCR and TIFF files (corresponding "
+              "TIFF and hOCR files have to have the same name with "
               "their respective file ending)")
     )
     parser.add_argument(

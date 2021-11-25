@@ -24,7 +24,7 @@
   * [hocr-extract-images](#hocr-extract-images) -- extract the images and texts within all the ocr_line elements
   * [hocr-lines](#hocr-lines) -- extract the text within all the ocr_line elements
   * [hocr-merge-dc](#hocr-merge-dc) -- merge Dublin Core meta data into the hOCR HTML header
-  * [hocr-pdf](#hocr-pdf) -- create a searchable PDF from a pile of hOCR and JPEG
+  * [hocr-pdf](#hocr-pdf) -- create a searchable PDF from a pile of hOCR and TIFF
   * [hocr-split](#hocr-split) -- split an hOCR file into individual pages
   * [hocr-wordfreq](#hocr-wordfreq) -- calculate word frequency in an hOCR file
 * [Unit tests](#unit-tests)
@@ -205,7 +205,7 @@ hocr-pdf <imgdir> > out.pdf
 hocr-pdf --savefile out.pdf <imgdir>
 ```
 
-Create a searchable PDF from a pile of hOCR and JPEG. It is important that the corresponding JPEG and hOCR files have the same name with their respective file ending. All of these files should lie in one directory, which one has to specify as an argument when calling the command, e.g. use `hocr-pdf . > out.pdf` to run the command in the current directory and save the output as `out.pdf` alternatively `hocr-pdf . --savefile out.pdf` which avoids routing the output through the terminal.
+Create a searchable PDF from a pile of hOCR and TIFF. It is important that the corresponding TIFF and hOCR files have the same name with their respective file ending. All of these files should lie in one directory, which one has to specify as an argument when calling the command, e.g. use `hocr-pdf . > out.pdf` to run the command in the current directory and save the output as `out.pdf` alternatively `hocr-pdf . --savefile out.pdf` which avoids routing the output through the terminal.
 
 ### hocr-split
 
