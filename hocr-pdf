@@ -26,6 +26,7 @@ import os.path
 import re
 import sys
 import zlib
+import math
 
 from bidi.algorithm import get_display
 from reportlab.pdfbase import pdfmetrics
@@ -68,8 +69,8 @@ def export_pdf(playground, default_dpi, savefile=False):
             dpi = im.info['dpi'][0]
         except KeyError:
             pass
-        width = w * 72 / dpi
-        height = h * 72 / dpi
+        width = math.ceil(w * 72 / dpi)
+        height = math.ceil(h * 72 / dpi)
         pdf.setPageSize((width, height))
         pdf.drawImage(image, 0, 0, width=width, height=height)
         add_text_layer(pdf, image, height, dpi)
